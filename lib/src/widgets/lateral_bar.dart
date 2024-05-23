@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 
+// Adapted from 
+// https://github.com/VictorRyan3612/Flutter_Music_Player_App/commit/545a007638702a0819cf190a80b707c103d96f16
+
 
 class ExtensibleLateralBarItem {
   final Icon icon;
