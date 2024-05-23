@@ -1,3 +1,5 @@
-## 0.0.1
+### 0.0.1
+Lateral_bar
 
-* TODO: Describe initial release.
+### 0.0.2
+dropdown_widget
