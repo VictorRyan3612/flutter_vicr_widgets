@@ -1,5 +1,5 @@
-# flutter_vics_packages
-Repositório de package com widgets flutter criado por mim
+# flutter_vics_widgets
+Package repository with flutter widgets created by me
 
 ## how to use in your project:
 in pubspec add the lines in dependencies:
