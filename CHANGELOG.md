@@ -7,3 +7,7 @@ dropdown_widget
 
 ### 0.0.3
 data_table_widget
+
+### 0.0.4
+callback function parameter to access each element in data_table_widget
+callback function to sort elements in data_table_widget

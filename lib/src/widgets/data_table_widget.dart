@@ -14,18 +14,21 @@ void _empty(String){}
 
 
 class DataTableWidget extends HookWidget {
-  final _sortCallback;
+  final Function(String value) sortCallback;
   final List objects;
   final List columns;
   final List? columnsNames;
+  final String Function(dynamic obj, String property) accessCallback;
+
 
   const DataTableWidget({super.key, 
     this.objects = const [],
     this.columns = const [], 
     this.columnsNames,
-    sortCallback
+    sortCallback,
+    required this.accessCallback,
     }):
-    _sortCallback = sortCallback ?? _empty ;
+    sortCallback = sortCallback ?? _empty ;
 
   @override
   Widget build(BuildContext context) {
@@ -42,7 +45,7 @@ class DataTableWidget extends HookWidget {
             sortColumnIndex.value = columnIndex;
             sortAscending.value = !sortAscending.value;
 
-            _sortCallback(columnsNamesFinal[columnIndex]);
+            sortCallback(columnsNamesFinal[columnIndex]);
           },
           label: Expanded(
             child: Text(name,
@@ -59,7 +62,7 @@ class DataTableWidget extends HookWidget {
       rows: objects.map( 
         (obj) => DataRow(
             cells: columns.map(
-              (propName) => DataCell(Text(obj[propName]))
+              (propName) => DataCell(Text(accessCallback(obj, propName)))
             ).toList()
           )
         ).toList()
