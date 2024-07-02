@@ -15,3 +15,7 @@ callback function to sort elements in data_table_widget
 ### 0.0.5
 in data_table:
 Improved construtor, indexed DataRow, onTapDataRow
+
+### 0.0.6
+settings_data_service
+
