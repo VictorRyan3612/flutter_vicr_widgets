@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class SettingsService {
+  ValueNotifier<bool> isMobile = ValueNotifier(false);
+  
   ValueNotifier<bool> isDarkMode = ValueNotifier(true);
   ValueNotifier<String> colorName = ValueNotifier('Blue');
   
