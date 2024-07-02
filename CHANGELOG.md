@@ -19,3 +19,6 @@ Improved construtor, indexed DataRow, onTapDataRow
 ### 0.0.6
 settings_data_service
 
+### 0.0.7
+layout_decider
+
