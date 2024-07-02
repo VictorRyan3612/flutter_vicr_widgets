@@ -6,20 +6,23 @@ import 'package:flutter_vicr_widgets/src/widgets/config_screen.dart';
 import 'package:flutter_vicr_widgets/src/widgets/layout_decider.dart';
 
 class VictMaterialApp extends HookWidget {
-  final Map<String, Widget Function(BuildContext)> routes;
+  final Map<String, Widget Function(BuildContext)>? routes;
   
-  const VictMaterialApp({super.key, required this.routes});
+  const VictMaterialApp({super.key, this.routes});
 
-
+  loadSettings(){
+    settingsService.loadSettings();
+  }
   @override
   Widget build(BuildContext context) {
+
     // base states 
     final currentIsDarkMode = useState(settingsService.isDarkMode.value); //Theme
     final currentColor = useState(settingsService.colorName.value); // Accent color
 
     final finalTheme = setTheme(currentIsDarkMode.value, currentColor.value);
     
-    routes['/configs'] = (context) => ConfigScreen(
+    routes?['/configs'] = (context) => ConfigScreen(
       currentColor: currentColor, 
       currentIsDarkMode: currentIsDarkMode
     );
@@ -28,7 +31,7 @@ class VictMaterialApp extends HookWidget {
       debugShowCheckedModeBanner: false,
 
       initialRoute: '/',
-      routes: routes
+      routes: routes ?? {}
     );
   }
 }
