@@ -30,3 +30,6 @@ config_screen
 
 ### 0.0.10
 vicrMaterialApp
+
+### 0.0.11
+exports new widgets since 0.0.6

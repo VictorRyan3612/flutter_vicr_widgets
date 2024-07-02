@@ -19,11 +19,10 @@ class VictMaterialApp extends HookWidget {
 
     final finalTheme = setTheme(currentIsDarkMode.value, currentColor.value);
     
-    routes['configs'] = (context) => ConfigScreen(
+    routes['/configs'] = (context) => ConfigScreen(
       currentColor: currentColor, 
       currentIsDarkMode: currentIsDarkMode
     );
-
     return MaterialApp(
       theme: finalTheme,
       debugShowCheckedModeBanner: false,
