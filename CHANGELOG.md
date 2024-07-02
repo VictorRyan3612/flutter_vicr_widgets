@@ -27,3 +27,6 @@ theme
 
 ### 0.0.9
 config_screen
+
+### 0.0.10
+vicrMaterialApp
