@@ -22,3 +22,5 @@ settings_data_service
 ### 0.0.7
 layout_decider
 
+### 0.0.8
+theme
