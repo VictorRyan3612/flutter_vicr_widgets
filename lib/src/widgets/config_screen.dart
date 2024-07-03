@@ -2,13 +2,47 @@ import 'package:flutter/material.dart';
 import 'package:flutter_vicr_widgets/src/service/settings_data_service.dart';
 
 
-class ConfigScreen extends StatelessWidget {
-  final ValueNotifier<bool> currentIsDarkMode;
-  final ValueNotifier<String> currentColor;
-  const ConfigScreen({super.key, required this.currentIsDarkMode, required this.currentColor});
+class ConfigWidgets extends StatelessWidget {
+  final List<Widget>? leadingWidedgets;
+  final List<Widget>? trailingWidgets;
+  
+  const ConfigWidgets({super.key, this.leadingWidedgets, this.trailingWidgets});
 
   @override
   Widget build(BuildContext context) {
+    return this;
+  }
+}
+
+class ConfigScreen extends StatelessWidget {
+  final ValueNotifier<bool> currentIsDarkMode;
+  final ValueNotifier<String> currentColor;
+  final ConfigWidgets? configWidget;
+
+  const ConfigScreen({super.key, required this.currentIsDarkMode, required this.currentColor, this.configWidget});
+  @override
+  Widget build(BuildContext context) {
+    List<Widget> finalList = [];
+    if (configWidget != null && configWidget?.leadingWidedgets != null){
+      finalList.addAll(configWidget!.leadingWidedgets!);
+    }
+    finalList.add(
+      ListTile(
+        title: Text("Modo Escuro"),
+        trailing: Switch(
+          value: currentIsDarkMode.value, 
+          onChanged: (value) {
+            currentIsDarkMode.value = value;
+            settingsService.isDarkMode.value = value;
+            settingsService.saveSettings();
+          },
+        ),
+      )
+    );
+    if (configWidget != null && configWidget?.trailingWidgets != null){
+      finalList.addAll(configWidget!.trailingWidgets!);
+    }
+    settingsService.loadSettings();
     return Scaffold(
       appBar: AppBar(title: Text("Configurações"),),
       
@@ -19,24 +53,15 @@ class ConfigScreen extends StatelessWidget {
             constraints: const BoxConstraints(maxWidth: 600),
             child: Padding(
               padding: const EdgeInsets.all(12),
-              child: ListView(
-                children: [
-                  ListTile(
-                    title: Text("Modo Escuro"),
-                    // subtitle: Text(""),
-                    trailing: Switch(
-                      value: currentIsDarkMode.value, 
-                      onChanged: (value) {
-                        currentIsDarkMode.value = value;
-                        settingsService.isDarkMode.value = value;
-                        settingsService.saveSettings();
-                      },
-                    ),
-                    
-                  ),
-                  Divider(),
-                ],
-              ),
+              child: ListView.separated(
+                itemCount: finalList.length,
+                itemBuilder: (context, index) {
+                  return finalList[index];
+                },
+                separatorBuilder: (context, index) {
+                  return Divider();
+                }, 
+              )
             ),
           ),
         ),

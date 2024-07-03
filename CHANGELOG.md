@@ -33,3 +33,6 @@ vicrMaterialApp
 
 ### 0.0.11
 exports new widgets since 0.0.6
+
+### 0.0.12
+configWidgets
