@@ -21,7 +21,7 @@ class SettingsService {
     final prefs = await SharedPreferences.getInstance();
     
     prefs.setBool('vicrIsDarkMode', isDarkMode.value);
-    prefs.setString('colorTheme', colorName.value);
+    prefs.setString('vicrColorTheme', colorName.value);
   }
 }
 SettingsService settingsService = SettingsService();

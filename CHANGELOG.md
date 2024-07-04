@@ -36,3 +36,8 @@ exports new widgets since 0.0.6
 
 ### 0.0.12
 configWidgets
+
+### 0.0.13
+in settings_data_service, ColorTheme became vicrColorTheme
+
+in theme, use of typing in colorName and colorColors

@@ -10,8 +10,8 @@ MaterialColor colorStateVar = Colors.blue;
 // }
 
 // Setting light and dark themes
-ThemeData setTheme(bool isDarkMode, colorName) {
-  var colorColors = searchCodColorByName(colorName);
+ThemeData setTheme(bool isDarkMode, String colorName) {
+  MaterialColor colorColors = searchCodColorByName(colorName);
   colorStateVar = colorColors;
   ThemeData finalTema;
   if (isDarkMode){
