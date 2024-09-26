@@ -41,3 +41,6 @@ configWidgets
 in settings_data_service, ColorTheme became vicrColorTheme
 
 in theme, use of typing in colorName and colorColors
+
+### 0.0.14
+colors_selector
