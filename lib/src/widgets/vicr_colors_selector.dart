@@ -11,9 +11,9 @@ var color = await showDialog(context: context, builder: (context) {
 }); 
 
 */
-class ColorSelector extends StatelessWidget {
+class VicrColorSelector extends StatelessWidget {
   final List<MaterialColor>? colors;
-  const ColorSelector({super.key, this.colors });
+  const VicrColorSelector({super.key, this.colors });
   
 
   @override

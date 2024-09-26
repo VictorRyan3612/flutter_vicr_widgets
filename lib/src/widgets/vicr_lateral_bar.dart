@@ -14,10 +14,10 @@ class ExtensibleLateralBarItem {
 }
 
 
-class ExtensibleLateralBar extends HookWidget {
+class VicrExtensibleLateralBar extends HookWidget {
   final List<ExtensibleLateralBarItem> items;
   final List<ExtensibleLateralBarItem>? trailingItems;
-  const ExtensibleLateralBar({super.key, required this.items, this.trailingItems});
+  const VicrExtensibleLateralBar({super.key, required this.items, this.trailingItems});
 
   @override
   Widget build(BuildContext context) {

@@ -1,9 +1,9 @@
 library flutter_vicr_widgets;
 
-export 'src/widgets/lateral_bar.dart';
-export 'src/widgets/dropdown_widget.dart';
-export 'src/widgets/data_table_widget.dart';
+export 'src/widgets/vicr_lateral_bar.dart';
+export 'src/widgets/vicr_dropdown_widget.dart';
+export 'src/widgets/vicr_data_table_widget.dart';
 export 'src/widgets/vicr_material_app.dart';
-export 'src/widgets/config_screen.dart';
-export 'src/widgets/layout_decider.dart';
-export 'src/widgets/colors_selector.dart';
+export 'src/widgets/vicr_config_screen.dart';
+export 'src/widgets/vicr_layout_decider.dart';
+export 'src/widgets/vicr_colors_selector.dart';

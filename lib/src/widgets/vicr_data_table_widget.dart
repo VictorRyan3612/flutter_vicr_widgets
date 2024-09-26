@@ -13,7 +13,7 @@ Adapted file: https://github.com/DayXL/Atividades-de-POO-1/blob/main/receita9-10
 void empty(String){}
 
 
-class DataTableWidget extends HookWidget {
+class VicrDataTableWidget extends HookWidget {
   final Function(String value)? sortCallback;
   final List objects;
   final List columns;
@@ -21,7 +21,7 @@ class DataTableWidget extends HookWidget {
   final String Function(dynamic obj, String property) accessCallback;
   final Function(dynamic item)? onTapRow;
 
-  const DataTableWidget({super.key, 
+  const VicrDataTableWidget({super.key, 
     this.objects = const [],
     this.columns = const [], 
     this.columnsNames,

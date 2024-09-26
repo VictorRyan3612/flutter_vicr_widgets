@@ -14,12 +14,12 @@ class ConfigWidgets extends StatelessWidget {
   }
 }
 
-class ConfigScreen extends StatelessWidget {
+class VicrConfigScreen extends StatelessWidget {
   final ValueNotifier<bool> currentIsDarkMode;
   final ValueNotifier<String> currentColor;
   final ConfigWidgets? configWidget;
 
-  const ConfigScreen({super.key, required this.currentIsDarkMode, required this.currentColor, this.configWidget});
+  const VicrConfigScreen({super.key, required this.currentIsDarkMode, required this.currentColor, this.configWidget});
   @override
   Widget build(BuildContext context) {
     List<Widget> finalList = [];

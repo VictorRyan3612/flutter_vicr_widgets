@@ -44,3 +44,6 @@ in theme, use of typing in colorName and colorColors
 
 ### 0.0.14
 colors_selector
+
+### 0.0.15
+changing class and file names by adding vicr as prefix

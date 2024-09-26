@@ -2,13 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_vicr_widgets/src/service/settings_data_service.dart';
 import 'package:flutter_vicr_widgets/src/service/theme.dart';
-import 'package:flutter_vicr_widgets/src/widgets/config_screen.dart';
+import 'package:flutter_vicr_widgets/src/widgets/vicr_config_screen.dart';
 
 
-class VictMaterialApp extends HookWidget {
+class VicrMaterialApp extends HookWidget {
   final Map<String, Widget Function(BuildContext)>? routes;
   final ConfigWidgets? configWidget;
-  const VictMaterialApp({super.key, this.routes, this.configWidget});
+  const VicrMaterialApp({super.key, this.routes, this.configWidget});
 
   loadSettings(){
     settingsService.loadSettings();
@@ -22,7 +22,7 @@ class VictMaterialApp extends HookWidget {
 
     final finalTheme = setTheme(currentIsDarkMode.value, currentColor.value);
 
-    routes?['/configs'] = (context) => ConfigScreen(
+    routes?['/configs'] = (context) => VicrConfigScreen(
       currentColor: currentColor, 
       currentIsDarkMode: currentIsDarkMode,
       configWidget: configWidget,
