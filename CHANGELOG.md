@@ -47,3 +47,8 @@ colors_selector
 
 ### 0.0.15
 changing class and file names by adding vicr as prefix
+
+### 0.0.16
+in VicrLayoutDecider:
+the isMobile parameter is no longer mandatory
+added parameter maxSize
