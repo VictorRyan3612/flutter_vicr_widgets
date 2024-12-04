@@ -52,3 +52,9 @@ changing class and file names by adding vicr as prefix
 in VicrLayoutDecider:
 the isMobile parameter is no longer mandatory
 added parameter maxSize
+
+### 0.0.17
+in VicrMaterialApp:
+Copy of MaterialApp with custom routes and themes;
+return full MaterialApp
+staticLoadSettings
